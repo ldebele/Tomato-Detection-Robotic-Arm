@@ -8,8 +8,6 @@ from std_msgs.msg import Float64
 from tensorflow.keras.models import model_from_json
 from tensorflow.keras.preprocessing import image
 
-
-# import the model
 model = model_from_json(open("/home/lemi/Documents/ur_ws/src/scripts/src/model/model_arch.json", "r").read())
 model.load_weights('/home/lemi/Documents/ur_ws/src/scripts/src/model/model_weights.h5')
 
