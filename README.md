@@ -4,13 +4,11 @@
 Deep Learning based universal robotic arm (UR5) that utilized for the binning process of ripe and unripe tomatoes.
 
 ### How to use this repository
-- Make sure you have installed Python and some useful libraries/packages such as Tensorflow, Numpy, opencv, etc 
+- Make sure you have installed Python and some useful libraries/packages such as Tensorflow, Numpy, Matplotlib, OpenCV, etc 
 
 
 ## Getting Started
-- Make sure you have install ROS-Neotic in your pc and raspberry pi. 
-
-    [Follow ros-neotic installation](http://wiki.ros.org/noetic) 
+Make sure you have install ROS-Neotic in your pc and raspberry pi. [Follow ros-neotic installation](http://wiki.ros.org/noetic) 
 
 
 ### 1. On your PC (Node) 
@@ -87,3 +85,6 @@ export ROS_IP=[MASTER_IP]
 ```
 source .bashrc
 ```
+
+## Contributor
+- `Lemi Debele`
