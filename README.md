@@ -33,56 +33,62 @@ Deep Learning Based Tomato Detection Robotic Arm
     source devel/setup.bash
     ```
 
+2. Add this to bash file in the master pc
+```
+export export ROS_MASTER_URI=http://localhost:11311/
+export ROS_HOSTNAME=[MASTER IP]
+export ROS_IP=[MASTER IP]
+```
+3. source bash file
+```
+source .bashrc
+```
+
+
+
 ### 2. Raspberry pi
 Make sure you have a version of Git higher that 2.25.0 on your raspberry pi.
-- Run the following command to clone only the ros_master folder from this repository to your pi.
+1. Run the following command to clone only the ros_master folder from this repository to your pi.
 ```
 git clone --no-checkout https://github.com/ldebele/Tomato-Detection-Robotic-Arm.git
 
 cd Tomato-Detection-Robotic-Arm
+
 # Initialize the folder
 git sparse-checkout init --cone
+
 # pick the folder ros_master and add it in the repo.
 git sparse-checkout set ros_master
 
 git checkout @
 ``` 
 
-Assuming your master workspace in your raspberry pi names as ur_ws.
+2. Create a workspace in your Raspberry Pi and names it ur_ws.
 ```
-    mkdir -p ur_ws/src
-    cd ur_ws/src
-    
-    # Copy scripts folder from ros_master folder and past it into src folder.
-    cd ~/ur_ws
+mkdir -p ur_ws/src
+cd ur_ws/src
 
-    # checking dependencies
-    rosdep install --from-paths src --ignore-src --rosdistro neotic
+# Copy scripts folder from ros_master folder and past it into src folder.
+cd ~/ur_ws
 
-    # build 
-    catkin_make
+# checking dependencies
+rosdep install --from-paths src --ignore-src --rosdistro neotic
 
-    # source this workspace (careful when also sourcing others)
-    cd ~/ur_ws
-    source devel/setup.bash
-    ```
+# build 
+catkin_make
 
-
-
-Add this to bash file in the master pc
+# source this workspace (careful when also sourcing others)
+cd ~/ur_ws
+source devel/setup.bash
 ```
-export export ROS_MASTER_URI=http://localhost:11311/
-export ROS_HOSTNAME=[MASTER IP]
-export ROS_IP=[MASTER IP]
-```
-then source bash file
 
-
-
-add this to bash file of slave pc (raspberry pi in this context)
+3. Add this to bash file on your raspberry pi.
 ```
 export ROS_MASTER_URI=http://[MASTER IP]:11311/
 export ROS_HOSTNAME=[SLAVE IP]
 export ROS_IP=[SLAVE IP]
 ```
-then source bash file
+4. source bash file
+```
+source .bashrc
+```
