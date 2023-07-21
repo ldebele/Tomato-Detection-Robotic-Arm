@@ -6,7 +6,7 @@
 - Contributor
 ## Overview
 Deep Learning based universal robotic arm (UR5) that utilized for the binning process of ripe and unripe tomatoes.
-<img src='./reports/general_architecture.png'>
+
 ## Getting Started
 ### How to use this repository
 - Make sure you have installed Python and some useful libraries/packages such as Tensorflow, Numpy, Matplotlib, OpenCV, etc.
