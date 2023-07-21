@@ -3,7 +3,7 @@
 ## Table Contents
 - Overview
 - Getting Started
-- Contributors
+- Contributor
 ## Overview
 Deep Learning based universal robotic arm (UR5) that utilized for the binning process of ripe and unripe tomatoes.
 
@@ -13,7 +13,7 @@ Deep Learning based universal robotic arm (UR5) that utilized for the binning pr
 - Make sure you have install ROS-Neotic in your pc and raspberry pi. [Follow ros-neotic installation](http://wiki.ros.org/noetic) 
 
 ### 1. On your PC (Node) 
-1. Create a workspace in your computer and names it ur_ws.
+1. Create a workspace in your computer and name it ur_ws.
 ```
 mkdir -p ur_ws/src
 cd ur_ws/src

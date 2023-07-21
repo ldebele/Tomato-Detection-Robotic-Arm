@@ -1,2 +1,6 @@
-
-
+ros-neotic
+tensorflow
+matplotlib
+opencv
+numpy
+pandas
