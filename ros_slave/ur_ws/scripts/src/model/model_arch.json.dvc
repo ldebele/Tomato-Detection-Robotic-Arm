@@ -1,0 +1,4 @@
+outs:
+- md5: 1789140251d91021d773fff5e626cd6b
+  size: 4365
+  path: model_arch.json
