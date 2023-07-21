@@ -48,43 +48,44 @@ def callback3(data):
         print(f"Message sent on {bus.channel_info}")
     except can.CanError:
         print('Message NOT sent.')
+        
 
-def callback4(data):
-    rospy.loginfo("Message is being sent")
-    pos_4 = 600*data.data
+# def callback4(data):
+#     rospy.loginfo("Message is being sent")
+#     pos_4 = 600*data.data
     
-    positionMsg4 =can.Message(arbitration_id=0x143, data=[0xA4, 0x00, 0x0E, 0x01, (pos_4)&0xFF, (pos_4>>8)&0xFF,(pos_4>>16)&0xFF,(pos_4>>24)&0xFF], is_extended_id=False)
+#     positionMsg4 =can.Message(arbitration_id=0x143, data=[0xA4, 0x00, 0x0E, 0x01, (pos_4)&0xFF, (pos_4>>8)&0xFF,(pos_4>>16)&0xFF,(pos_4>>24)&0xFF], is_extended_id=False)
     
-    try:
-        bus.send(positionMsg4)
-        print(f"Message sent on {bus.channel_info}")
-    except can.CanError:
-        print('Message NOT sent.')
+#     try:
+#         bus.send(positionMsg4)
+#         print(f"Message sent on {bus.channel_info}")
+#     except can.CanError:
+#         print('Message NOT sent.')
 
-def callback5(data):
-    rospy.loginfo("Message is being sent")
-    pos_5 = 600*data.data
+# def callback5(data):
+#     rospy.loginfo("Message is being sent")
+#     pos_5 = 600*data.data
     
-    positionMsg5 =can.Message(arbitration_id=0x144, data=[0xA4, 0x00, 0x0E, 0x01, (pos_5)&0xFF, (pos_5>>8)&0xFF,(pos_5>>16)&0xFF,(pos_5>>24)&0xFF], is_extended_id=False)
+#     positionMsg5 =can.Message(arbitration_id=0x144, data=[0xA4, 0x00, 0x0E, 0x01, (pos_5)&0xFF, (pos_5>>8)&0xFF,(pos_5>>16)&0xFF,(pos_5>>24)&0xFF], is_extended_id=False)
     
-    try:
-        bus.send(positionMsg5)
-        print(f"Message sent on {bus.channel_info}")
-    except can.CanError:
-        print('Message NOT sent.')
+#     try:
+#         bus.send(positionMsg5)
+#         print(f"Message sent on {bus.channel_info}")
+#     except can.CanError:
+#         print('Message NOT sent.')
 
 
-def callback6(data):
-    rospy.loginfo("Message is being sent")
-    pos_6 = 600*data.data
+# def callback6(data):
+#     rospy.loginfo("Message is being sent")
+#     pos_6 = 600*data.data
     
-    positionMsg6 =can.Message(arbitration_id=0x146, data=[0xA4, 0x00, 0x0E, 0x01, (pos_6)&0xFF, (pos_6>>8)&0xFF,(pos_6>>16)&0xFF,(pos_6>>24)&0xFF], is_extended_id=False)
+#     positionMsg6 =can.Message(arbitration_id=0x146, data=[0xA4, 0x00, 0x0E, 0x01, (pos_6)&0xFF, (pos_6>>8)&0xFF,(pos_6>>16)&0xFF,(pos_6>>24)&0xFF], is_extended_id=False)
     
-    try:
-        bus.send(positionMsg6)
-        print(f"Message sent on {bus.channel_info}")
-    except can.CanError:
-        print('Message NOT sent.')
+#     try:
+#         bus.send(positionMsg6)
+#         print(f"Message sent on {bus.channel_info}")
+#     except can.CanError:
+#         print('Message NOT sent.')
 
 
 rospy.loginfo(rospy.get_caller_id() + " I recieved data.")
@@ -95,9 +96,9 @@ def listener():
     rospy.Subscriber("/ur/joint1_position_controller/command", Float64, callback1)
     rospy.Subscriber("/ur/joint2_position_controller/command", Float64, callback2)
     rospy.Subscriber("/ur/joint3_position_controller/command", Float64, callback3)
-    rospy.Subscriber("/ur/joint4_position_controller/command", Float64, callback4)
-    rospy.Subscriber("/ur/joint5_position_controller/command", Float64, callback5)
-    rospy.Subscriber("/ur/joint6_position_controller/command", Float64, callback6)
+    # rospy.Subscriber("/ur/joint4_position_controller/command", Float64, callback4)
+    # rospy.Subscriber("/ur/joint5_position_controller/command", Float64, callback5)
+    # rospy.Subscriber("/ur/joint6_position_controller/command", Float64, callback6)
     rospy.spin()
 
 

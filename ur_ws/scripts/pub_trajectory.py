@@ -11,17 +11,18 @@ from tensorflow.keras.preprocessing import image
 
 UNRIPE_DIR = './src/unripe.txt'
 RIPE_DIR = './src/ripe.txt'
+MODEL_DIR = './scr/model/model_weights.hs'
+MODEL_JSON_DIR = './src/model/model_arch.json'
                     
-
-model = model_from_json(open("/home/lemi/Documents/ur_ws/src/scripts/src/model/model_arch.json", "r").read())
-model.load_weights('/home/lemi/Documents/ur_ws/src/scripts/src/model/model_weights.h5')
-
 class Talker:
     def __init__(self):
         self.pub1 = None 
         self.pub2 = None 
         self.pub3 = None 
         self.rate = None
+
+        self.model = model_from_json(open(MODEL_DIR, "r").read())
+        self.model.load_weights(MODEL_DIR)
 
 
     def talker(self):
@@ -63,7 +64,7 @@ class Talker:
                 image_pixels = image.img_to_array(resized_img)
                 image_pixels = np.expand_dims(image_pixels, axis=0)
                 image_pixels /= 255.
-                predictions = model.predict(image_pixels)
+                predictions = self.model.predict(image_pixels)
                 max_index = np.argmax(predictions[0])
                 tomato_detection_dict = ('background', 'Red', 'Green')
                 tomato_prediction = tomato_detection_dict[max_index]
