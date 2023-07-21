@@ -6,11 +6,15 @@ Deep Learning Based Tomato Detection Robotic Arm
 - Make sure you have installed Python and some useful libraries/packages such as Tensorflow, Numpy, opencv, etc 
 
 
+## Getting Started
+- Make sure you have install ROS-Neotic in your pc and raspberry pi. 
+
+    Follow ros-neotic installation 
+[link](http://wiki.ros.org/noetic) 
 ### 1. PC
 - Assuming your master universal robot workspace is names as ur_ws, download ur_ws/script folder from this repository and past it into ur_ws/src folder that you will create.
 
-Follow ros-neotic installation
-- http://wiki.ros.org/noetic/Installation/Ubuntu
+Installation/Ubuntu
 
     ```
     mkdir -p ur_ws/src
